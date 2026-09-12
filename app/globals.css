@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ritual-cacao: #5c3228;
+  --color-ritual-bronze: #c4a574;
+  --color-ritual-sage: #3f5648;
+  --color-ritual-ink: #1c1614;
+  --color-ritual-ink-soft: #5a514c;
+  --color-ritual-cream: #f4ede3;
+  --color-ritual-paper: #fff9f2;
+  --color-ritual-sand: #e7d8c4;
+  --color-ritual-blush: #d9b7b0;
+  --color-ritual-danger: #8f2d2d;
+  --color-ritual-success: #2f5d45;
+  --font-sans: var(--font-plex), "IBM Plex Sans Arabic", sans-serif;
+  --font-display: var(--font-amiri), "Amiri", serif;
+  --font-english: var(--font-cormorant), "Cormorant Garamond", serif;
+}
+
+html {
+  background: #f4ede3;
+  scroll-padding-top: 6.5rem;
+}
+
+body {
+  background: #f4ede3;
+  color: #1c1614;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-english {
+  font-family: var(--font-english);
+}
+
+::selection {
+  background: #c4a574;
+  color: #1c1614;
+}
+
+.hairline {
+  height: 1px;
+  width: 4rem;
+  background: #c4a574;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #5c3228;
+  color: #fff9f2;
+  padding: 0.85rem 1.75rem;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+  background: #4a281f;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c4a574;
+  color: #1c1614;
+  padding: 0.85rem 1.75rem;
+  background: transparent;
+}
+
+.input-ltr-end {
+  direction: ltr;
+  text-align: right;
+}
+
+.input-ltr-end::placeholder {
+  text-align: right;
+}
+
+.btn-secondary:hover {
+  background: #fff9f2;
+}
+
+button.bg-ritual-cacao:hover,
+a.bg-ritual-cacao:hover {
+  background-color: #4a281f;
+}
+
+.promo-marquee-track {
+  animation: promo-marquee 32s linear infinite;
+}
+
+@keyframes promo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .promo-marquee {
+    display: none;
+  }
+
+  .promo-marquee-static {
+    display: block !important;
+  }
+}
